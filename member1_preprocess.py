@@ -47,6 +47,13 @@ def preprocess_image(image_path):
         "data/preprocessed_image.npy",
         normalized
     )
+    
+    # Save normalized image as PNG (convert from 0-1 to 0-255)
+    normalized_uint8 = (normalized * 255).astype(np.uint8)
+    cv2.imwrite(
+        "output/preprocessed_image_normalized.png",
+        normalized_uint8
+    )
 
     print("Saved preprocessed image")
 

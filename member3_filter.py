@@ -280,3 +280,9 @@ if __name__ == "__main__":
     )
 
     print("\nMember 3 module executed successfully.")
+
+magnitude = np.log1p(np.abs(filtered_spectrum))
+
+plt.imshow(magnitude, cmap="gray")
+plt.axis("off")
+plt.savefig("output/filtered_spectrum.png", bbox_inches="tight")
